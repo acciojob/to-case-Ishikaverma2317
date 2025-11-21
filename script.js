@@ -1,32 +1,8 @@
-function sortString(strArray) {
-  // return the sorted array
-  strArray.sort();
-  return strArray;
+function toCase(str) {
+  const lower = str.toLowerCase();
+  const upper = str.toUpperCase();
+  return `${lower}-${upper}`;
 }
 
-/*Do not change the code below */
-
-var readline = require("readline").createInterface(process.stdin);
-
-let inputArr = [];
-var lineNumber = -1;
-var inputSize;
-
-//multipleline input from User
-readline.on("line", readInputs);
-
-function readInputs(line) {
-  inputArr.push(line);
-  lineNumber++;
-
-  //Exit Condition
-  if (lineNumber == 0) {
-    logic("s");
-    readline.close();
-  }
-}
-
-function logic(input) {
-  let str = JSON.parse(inputArr[0].trim());
-  console.log(sortString(str).join(" ").trim());
-}
+// window.prompt, window.alert ke liye Cypress stub karega.
+// Tum bas function ko export NA karo, browser me export ki zarurat nahi.
